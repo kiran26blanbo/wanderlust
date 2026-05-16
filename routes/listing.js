@@ -8,6 +8,7 @@ const listingController=require("../controllers/listings.js")
 const {isLoggedIn,isOwner,validateListing}=require("../middleware.js")
 const {storage,cloudinary}=require("../cloudConfig.js");
 const upload = multer({ storage,cloudinary});
+
 router.route("/")
 .get(wrapAsync(listingController.display))//display listing
 .post(
